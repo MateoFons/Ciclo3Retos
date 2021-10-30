@@ -3,7 +3,7 @@
 function autoInicioCategory() {
     console.log("se esta ejecutando category")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Category/all",
+        url: "http://144.22.225.106:8080/api/Category/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -38,7 +38,7 @@ function guardarInfoCategory() {
         description: $("#Cdescription").val(),
     };
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Category/save",
+        url: "http://144.22.225.106:8080/api/Category/save",
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
@@ -63,7 +63,7 @@ function actualizarInfoCategory(idElement) {
     };
     let dataToSend = JSON.stringify(var2);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Category/update",
+        url: "http://144.22.225.106:8080/api/Category/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -89,7 +89,7 @@ function borrarInfoCategory(idElement) {
     };
     let dataToSend = JSON.stringify(var2);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Category/" + idElement,
+        url: "http://144.22.225.106:8080/api/Category/" + idElement,
         type: 'DELETE',
         data: dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -111,7 +111,7 @@ function borrarInfoCategory(idElement) {
 function autoInicioOrtopedic() {
     console.log("se esta ejecutando ortopedic")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Ortopedic/all",
+        url: "http://144.22.225.106:8080/api/Ortopedic/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -154,7 +154,7 @@ function guardarInfoOrtopedic() {
         category: { id: +$("#select-category").val() }
     };
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Ortopedic/save",
+        url: "http://144.22.225.106:8080/api/Ortopedic/save",
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
@@ -183,7 +183,7 @@ function actualizarInfoOrtopedic(idElemento) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Ortopedic/update",
+        url: "http://144.22.225.106:8080/api/Ortopedic/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -208,7 +208,7 @@ function borrarInfoOrtopedic(idElemento) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Ortopedic/" + idElemento,
+        url: "http://144.22.225.106:8080/api/Ortopedic/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -226,7 +226,7 @@ function borrarInfoOrtopedic(idElemento) {
 function autoInicioClient() {
     console.log("se esta ejecutando client")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Client/all",
+        url: "http://144.22.225.106:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -268,7 +268,7 @@ function guardarInfoClient() {
     };
     console.log(data);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Client/save",
+        url: "http://144.22.225.106:8080/api/Client/save",
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         dataType: 'JSON',
@@ -297,7 +297,7 @@ function actualizarInfoClient(idElemento) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Client/update",
+        url: "http://144.22.225.106:8080/api/Client/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -321,7 +321,7 @@ function borrarInfoClient(idElemento) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Client/" + idElemento,
+        url: "http://144.22.225.106:8080/api/Client/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -339,7 +339,7 @@ function borrarInfoClient(idElemento) {
 function autoInicioMessage() {
     console.log("se esta ejecutando message")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Message/all",
+        url: "http://144.22.225.106:8080/api/Message/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -378,7 +378,7 @@ function guardarInfoMessage() {
     console.log(data);
     let dataToSend = JSON.stringify(data);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Message/save",
+        url: "http://144.22.225.106:8080/api/Message/save",
         type: 'POST',
         data: dataToSend,
         contentType: "application/JSON",
@@ -405,7 +405,7 @@ function actualizarInfoMessage(idElemento) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Message/update",
+        url: "http://144.22.225.106:8080/api/Message/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -428,7 +428,7 @@ function borrarInfoMessage(idElemento) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Message/" + idElemento,
+        url: "http://144.22.225.106:8080/api/Message/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -446,7 +446,7 @@ function borrarInfoMessage(idElemento) {
 function autoInicioReservation() {
     console.log("se esta ejecutando Reservation")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Reservation/all",
+        url: "http://144.22.225.106:8080/api/Reservation/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -488,7 +488,7 @@ function guardarInfoReservation() {
     console.log(data);
     let dataToSend = JSON.stringify(data);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Reservation/save",
+        url: "http://144.22.225.106:8080/api/Reservation/save",
         type: 'POST',
         data: dataToSend,
         contentType: "application/JSON",
@@ -516,7 +516,7 @@ function actualizarInfoReservation(idElemento) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Reservation/update",
+        url: "http://144.22.225.106:8080/api/Reservation/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -540,7 +540,7 @@ function borrarInfoReservation(idElemento) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Reservation/" + idElemento,
+        url: "http://144.22.225.106:8080/api/Reservation/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -558,7 +558,7 @@ function borrarInfoReservation(idElemento) {
 function autoInicioScore() {
     console.log("se esta ejecutando Score")
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Score/all",
+        url: "http://144.22.225.106:8080/api/Score/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -597,7 +597,7 @@ function guardarInfoScore() {
     console.log(data);
     let dataToSend = JSON.stringify(data);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Score/save",
+        url: "http://144.22.225.106:8080/api/Score/save",
         type: 'POST',
         data: dataToSend,
         contentType: "application/JSON",
@@ -624,7 +624,7 @@ function actualizarInfoScore(idElemento) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Score/update",
+        url: "http://144.22.225.106:8080/api/Score/update",
         type: "PUT",
         data: dataToSend,
         contentType: "application/JSON",
@@ -647,7 +647,7 @@ function borrarInfoScore(idElemento) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.96.250:8080/api/Score/" + idElemento,
+        url: "http://144.22.225.106:8080/api/Score/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
