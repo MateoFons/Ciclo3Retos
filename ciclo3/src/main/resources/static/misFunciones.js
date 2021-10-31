@@ -475,7 +475,7 @@ function pintarRespuestaReservation(respuesta) {
         myTable += "</tr>";
     }
     myTable += "</table>";
-    $("#resultado6").html(myTable);
+    $("#resultado5").html(myTable);
 }
 
 function guardarInfoReservation() {
@@ -588,7 +588,7 @@ function pintarRespuestaScore(respuesta) {
         myTable += "</tr>";
     }
     myTable += "</table>";
-    $("#resultado5").html(myTable);
+    $("#resultado6").html(myTable);
 }
 
 function guardarInfoScore() {
