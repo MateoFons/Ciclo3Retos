@@ -4,13 +4,15 @@ package grupo0.ciclo3.servicio;
 
 import grupo0.ciclo3.modelo.Ortopedic;
 import grupo0.ciclo3.repositorio.OrtopedicRepository;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrtopedicService {
+public class OrtopedicService implements Serializable {
     @Autowired
     private OrtopedicRepository ortopedicRepository;
     

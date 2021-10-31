@@ -3,9 +3,12 @@ package grupo0.ciclo3.controlador;
 
 
 import grupo0.ciclo3.modelo.Reservation;
+import grupo0.ciclo3.repositorio.CounterClient;
 import grupo0.ciclo3.servicio.ReservationService;
 import java.util.List;
 import java.util.Optional;
+
+import grupo0.ciclo3.servicio.StatusReservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -54,5 +57,19 @@ public class ReservationController {
     public boolean delete(@PathVariable("id")int reservationId){
         return reservationService.deleteReservation(reservationId);
     }
-    
+
+    @GetMapping("/report-status")
+    public StatusReservation getReservas() {
+        return reservationService.reportStatusService();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationTime (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+        return reservationService.reportTimeService(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<CounterClient> getClients() {
+        return reservationService.reportClientService();
+    }
 }

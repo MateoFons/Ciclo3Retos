@@ -3,13 +3,15 @@ package grupo0.ciclo3.servicio;
 
 import grupo0.ciclo3.modelo.Score;
 import grupo0.ciclo3.repositorio.ScoreRepository;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ScoreService {
+public class ScoreService implements Serializable {
     @Autowired
     private ScoreRepository scoreRepository;
     

@@ -4,13 +4,15 @@ package grupo0.ciclo3.servicio;
 
 import grupo0.ciclo3.modelo.Message;
 import grupo0.ciclo3.repositorio.MessageRepository;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MessageService {
+public class MessageService implements Serializable {
     @Autowired
     private MessageRepository messageRepository;
     

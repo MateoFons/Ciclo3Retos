@@ -4,13 +4,15 @@ package grupo0.ciclo3.servicio;
 
 import grupo0.ciclo3.modelo.Category;
 import grupo0.ciclo3.repositorio.CategoryRepository;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CategoryService {
+public class CategoryService implements Serializable {
     @Autowired
     private CategoryRepository categoryRepository;
     
