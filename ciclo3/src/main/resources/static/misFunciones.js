@@ -482,6 +482,7 @@ function guardarInfoReservation() {
     let data = {
         startDate: $("#RstartDate").val(),
         devolutionDate: $("#RdevolutionDate").val(),
+        status: $("#Rstatus").val(),
         client: { idClient: +$("#select-client1").val() },
         ortopedic: { id: +$("#select-ortopedic1").val() }
     };
@@ -510,6 +511,7 @@ function actualizarInfoReservation(idElemento) {
         idReservation: idElemento,
         startDate: $("#RstartDate").val(),
         devolutionDate: $("#RdevolutionDate").val(),
+        status: $("#Rstatus").val(),
         client: { idClient: +$("#select-client1").val() },
         ortopedic: { id: +$("#select-ortopedic1").val() }
     };
@@ -526,6 +528,7 @@ function actualizarInfoReservation(idElemento) {
             $("#idReservation").val("");
             $("#RstartDate").val("");
             $("#RdevolutionDate").val("");
+            $("#Rstatus").val("");
             $("#select-client1").val("");
             $("#select-ortopedic1").val("");
             autoInicioReservation();
@@ -687,20 +690,6 @@ function pintarRespuesta(respuesta) {
     $("#resultado7").html(myTable);
 }
 
-function pintarRespuestaDate(respuesta) {
-    let myTable = "<table>";
-    for (i = 0; i < respuesta.length; i++) {
-        myTable += "<tr>";
-        myTable += "<th>total</th>";
-        myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
-        myTable += "<td>" + respuesta[i].startDate + "</td>";
-        myTable += "<td>" + respuesta[i].status + "</td>";
-        myTable += "</tr>";
-    }
-    myTable += "</table>";
-    $("#resultadoDate").html(myTable);
-}
-
 function traerReportDate() {
     var fechaInicio = document.getElementById("PstarDate").value;
     var fechaCierre = document.getElementById("PdevolutionDate").value;
@@ -715,6 +704,20 @@ function traerReportDate() {
             pintarRespuestaDate(respuesta);
         }
     });
+}
+
+function pintarRespuestaDate(respuesta) {
+    let myTable = "<table>";
+    for (i = 0; i < respuesta.length; i++) {
+        myTable += "<tr>";
+        myTable += "<th>total</th>";
+        myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
+        myTable += "<td>" + respuesta[i].startDate + "</td>";
+        myTable += "<td>" + respuesta[i].status + "</td>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultadoDate").html(myTable);
 }
 
 function traerReportClientes() {
