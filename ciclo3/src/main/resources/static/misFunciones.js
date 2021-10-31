@@ -659,3 +659,87 @@ function borrarInfoScore(idElemento) {
         }
     });
 }
+
+//------------------------------------ Funciones Reports ------------------------------------//
+
+function autoInicioReports() {
+    console.log("se esta ejecutando reports")
+    $.ajax({
+        url: "http://144.22.225.106:8080/api/Reservation/report-status",
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta) {
+            console.log(respuesta);
+            pintarRespuesta(respuesta);
+        }
+    })
+}
+
+function pintarRespuesta(respuesta) {
+    let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Completadas</th>";
+    myTable += "<td>" + respuesta.completed + "</td>";
+    myTable += "<th>Canceladas</th>";
+    myTable += "<td>" + respuesta.cancelled + "</td>";
+    myTable += "</tr>";
+    myTable += "</table>";
+    $("#resultado7").html(myTable);
+}
+
+function pintarRespuestaDate(respuesta) {
+    let myTable = "<table>";
+    for (i = 0; i < respuesta.length; i++) {
+        myTable += "<tr>";
+        myTable += "<th>total</th>";
+        myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
+        myTable += "<td>" + respuesta[i].startDate + "</td>";
+        myTable += "<td>" + respuesta[i].status + "</td>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultadoDate").html(myTable);
+}
+
+function traerReportDate() {
+    var fechaInicio = document.getElementById("PstarDate").value;
+    var fechaCierre = document.getElementById("PdevolutionDate").value;
+    console.log(fechaInicio);
+    console.log(fechaCierre);
+    $.ajax({
+        url: "http://144.22.225.106:8080/api/Reservation/report-dates/" + fechaInicio + "/" + fechaCierre,
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta) {
+            console.log(respuesta);
+            pintarRespuestaDate(respuesta);
+        }
+    });
+}
+
+function traerReportClientes() {
+    $.ajax({
+        url: "http://144.22.225.106:8080/api/Reservation/report-clients",
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta) {
+            console.log(respuesta);
+            pintarRespuestaClients(respuesta);
+        }
+    });
+}
+
+function pintarRespuestaClients(respuesta) {
+    let myTable = "<table>";
+    for (i = 0; i < respuesta.length; i++) {
+        myTable += "<tr>";
+        myTable += "<th>total</th>";
+        myTable += "<td>" + respuesta[i].total + "</td>";
+        myTable += "<td>" + respuesta[i].client.name + "</td>";
+        myTable += "<td>" + respuesta[i].client.email + "</td>";
+        myTable += "<td>" + respuesta[i].client.age + "</td>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultadoClientes").html(myTable);
+}

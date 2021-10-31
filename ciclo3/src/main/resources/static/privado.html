@@ -138,6 +138,24 @@
 				</script>
 			</article>
 
+			<article id="tab7">
+				<h2>Reportes</h2>
+				<div>
+					<label for="startdate">Fecha inicial:</label>
+					<input type="date" id="PstarDate" placeholder="Fecha inicial">
+					<label for="devolutionDate">Fecha final:</label>
+					<input type="date" id="PdevolutionDate" placeholder="Fecha final">
+					<div id="resultadoDate"></div>
+					<button onclick="traerReportDate()">Generar Reporte por fecha</button>
+					<div id="resultadoClientes"></div>
+					<button onclick="traerReportClientes()">Generar Reporte Clientes y Cantidad de reservas por cliente</button>
+				</div>
+				<div id="resultado7"></div>
+				<script>
+					window.onload = autoInicioReports();
+				</script>
+			</article>
+
 		</div>
 	</div>
 </body>
