@@ -28,25 +28,24 @@
 	<div class="container authenticated" style="display:none">
 		<div class="wrap">
 			<ul class="tabs">
-				<li><a href="#tab1"><span class="fa fa-bookmark"></span><span class="tab-text">Categorias</span></a>
-				</li>
-				<li><a href="#tab2"><span class="fa fa-bookmark"></span><span class="tab-text">Ortopedic</span></a></li>
+				<li><a href="#tab1"><span class="fa fa-bookmark"></span><span class="tab-text">Categorías</span></a></li>
+				<li><a href="#tab2"><span class="fa fa-bookmark"></span><span class="tab-text">Ortopedicos</span></a></li>
 				<li><a href="#tab3"><span class="fa fa-bookmark"></span><span class="tab-text">Clientes</span></a></li>
 				<li><a href="#tab4"><span class="fa fa-bookmark"></span><span class="tab-text">Mensajes</span></a></li>
-				<li><a href="#tab5"><span class="fa fa-bookmark"></span><span class="tab-text">Reservas</span></a></li>
+				<li><a href="#tab5"><span class="fa fa-bookmark"></span><span class="tab-text">Reservaciones</span></a></li>
 				<li><a href="#tab6"><span class="fa fa-bookmark"></span><span class="tab-text">Score</span></a></li>
 				<li><a href="#tab7"><span class="fa fa-bookmark"></span><span class="tab-text">Reportes</span></a></li>
 			</ul>
 			<div class="secciones">
 
 				<article id="tab1">
-					<h2>Categorias</h2>
+					<h2>Categorías</h2>
 					<div>
 						<label for="name">Nombre:</label>
 						<input type="text" id="Cname" placeholder="Nombre" required>
 						<label for="name">Descripción:</label>
 						<input type="text" id="Cdescription" placeholder="Descripcion" required>
-						<button onclick="guardarInfoCategory()">Guardar Categorias</button>
+						<button onclick="guardarInfoCategory()">Guardar Categoría</button>
 					</div>
 					<div id="resultado1"></div>
 					<script type="text/javascript">
@@ -56,7 +55,7 @@
 				</article>
 
 				<article id="tab2">
-					<h2>Ortopedic</h2>
+					<h2>Ortopedicos</h2>
 					<div>
 						<label for="name">Nombre:</label>
 						<input type="text" id="Oname" placeholder="Nombre" required>
@@ -68,7 +67,7 @@
 						<input type="text" id="Odescription" placeholder="Descripcion" required>
 						<label>Selecciona la Categoría: </label>
 						<select id="select-category"></select>
-						<button onclick="guardarInfoOrtopedic()">Guardar Ortopedic</button>
+						<button onclick="guardarInfoOrtopedic()">Guardar Ortopedico</button>
 					</div>
 					<div id="resultado2"></div>
 					<script type="text/javascript">
@@ -78,7 +77,7 @@
 				</article>
 
 				<article id="tab3">
-					<h2>Cliente</h2>
+					<h2>Clientes</h2>
 					<div>
 						<label for="email">Correo Electrónico:</label>
 						<input type="email" id="Clemail" placeholder="Email" required>
@@ -98,7 +97,7 @@
 				</article>
 
 				<article id="tab4">
-					<h2>Mensaje</h2>
+					<h2>Mensajes</h2>
 					<div>
 						<label for="message">Mensaje:</label>
 						<input type="text" id="MmessageText" placeholder="Mensaje" required>
@@ -116,7 +115,7 @@
 				</article>
 
 				<article id="tab5">
-					<h2>Reservacion</h2>
+					<h2>Reservaciones</h2>
 					<div>
 						<label for="startdate">Fecha de Salida:</label>
 						<input type="date" id="RstartDate" placeholder="Fecha de Salida" required>
@@ -131,7 +130,7 @@
 						<select id="select-client1"></select>
 						<label>Selecciona el ortopedico: </label>
 						<select id="select-ortopedic1"></select>
-						<button onclick="guardarInfoReservation()">Guardar Reservacion</button>
+						<button onclick="guardarInfoReservation()">Guardar Reservación</button>
 					</div>
 					<div id="resultado5"></div>
 					<script type="text/javascript">
@@ -186,5 +185,4 @@
 		$(".authenticated").show()
 	});
 </script>
-
 </html>
