@@ -101,7 +101,6 @@ public class ReservationService implements Serializable {
             return reservationRepository.ReservationTimeRepository(datoUno, datoDos);
         }else{
             return new ArrayList<>();
-
         }
     }
 

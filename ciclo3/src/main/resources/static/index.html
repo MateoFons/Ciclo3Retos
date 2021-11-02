@@ -9,25 +9,27 @@
 	<base href="/" />
 	<link rel="stylesheet" href="estilos.css">
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/query/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/webjars/query/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/ccf3890286.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="main.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="misFunciones.js"></script>
-	
+
 </head>
+
 <body>
 	<h1>#MisionTIC 2022</h1>
-    <div class="container unauthenticated">
-        Para iniciar sesión con Github:
-        <a href="/oauth2/authorization/github">Click acá</a>
-    </div>
+	<div class="container unauthenticated">
+		Para iniciar sesión con Github:
+		<a href="/oauth2/authorization/github">Click acá</a>
+	</div>
 	<div class="container authenticated" style="display:none">
 		<div class="wrap">
 			<ul class="tabs">
-				<li><a href="#tab1"><span class="fa fa-bookmark"></span><span class="tab-text">Categorias</span></a></li>
+				<li><a href="#tab1"><span class="fa fa-bookmark"></span><span class="tab-text">Categorias</span></a>
+				</li>
 				<li><a href="#tab2"><span class="fa fa-bookmark"></span><span class="tab-text">Ortopedic</span></a></li>
 				<li><a href="#tab3"><span class="fa fa-bookmark"></span><span class="tab-text">Clientes</span></a></li>
 				<li><a href="#tab4"><span class="fa fa-bookmark"></span><span class="tab-text">Mensajes</span></a></li>
@@ -36,7 +38,7 @@
 				<li><a href="#tab7"><span class="fa fa-bookmark"></span><span class="tab-text">Reportes</span></a></li>
 			</ul>
 			<div class="secciones">
-	
+
 				<article id="tab1">
 					<h2>Categorias</h2>
 					<div>
@@ -52,7 +54,7 @@
 					</script>
 					<div>
 				</article>
-	
+
 				<article id="tab2">
 					<h2>Ortopedic</h2>
 					<div>
@@ -74,7 +76,7 @@
 					</script>
 					<div>
 				</article>
-	
+
 				<article id="tab3">
 					<h2>Cliente</h2>
 					<div>
@@ -94,7 +96,7 @@
 					</script>
 					<div>
 				</article>
-	
+
 				<article id="tab4">
 					<h2>Mensaje</h2>
 					<div>
@@ -112,7 +114,7 @@
 					</script>
 					<div>
 				</article>
-	
+
 				<article id="tab5">
 					<h2>Reservacion</h2>
 					<div>
@@ -137,7 +139,7 @@
 					</script>
 					<div>
 				</article>
-	
+
 				<article id="tab6">
 					<h2>Score</h2>
 					<div>
@@ -154,9 +156,13 @@
 						window.onload = autoInicioScore();
 					</script>
 				</article>
-	
+
 				<article id="tab7">
 					<h2>Reportes</h2>
+					<div id="resultado7"></div>
+					<script>
+						window.onload = autoInicioReports();
+					</script>
 					<div>
 						<label for="startdate">Fecha inicial:</label>
 						<input type="date" id="PstarDate" placeholder="Fecha inicial">
@@ -165,12 +171,9 @@
 						<div id="resultadoDate"></div>
 						<button onclick="traerReportDate()">Reporte por fecha</button>
 						<div id="resultadoClientes"></div>
-						<button onclick="traerReportClientes()">Reporte Clientes y Cantidad de reservas por cliente</button>
+						<button onclick="traerReportClientes()">Reporte Clientes y Cantidad de reservas por
+							cliente</button>
 					</div>
-					<div id="resultado7"></div>
-					<script>
-						window.onload = autoInicioReports();
-					</script>
 				</article>
 
 			</div>
@@ -178,10 +181,11 @@
 	</div>
 </body>
 <script type="text/javascript">
-    $.get("/user", function (data) {
-        $("#user").html(data.name);
-        $(".unauthenticated").hide()
-        $(".authenticated").show()
-    });
+	$.get("/user", function (data) {
+		$("#user").html(data.name);
+		$(".unauthenticated").hide()
+		$(".authenticated").show()
+	});
 </script>
+
 </html>

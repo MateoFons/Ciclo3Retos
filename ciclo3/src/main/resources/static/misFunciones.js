@@ -582,7 +582,7 @@ function pintarRespuestaScore(respuesta) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].messageText + "</td>";
         myTable += "<td>" + respuesta[i].stars + "</td>";
-        myTable += "<td>" + respuesta[i].reservation.name + "</td>";
+        myTable += "<td>" + respuesta[i].reservation.devolutionDate + "</td>";
         myTable += "<td> <button onclick='actualizarInfoScore(" + respuesta[i].idScore + ")'><i class='fas fa-sync'></i></button></td>";
         myTable += "<td> <button onclick='borrarInfoScore(" + respuesta[i].idScore + ")'><i class='fas fa-times-circle'></i></button></td>";
         myTable += "</tr>";
@@ -673,12 +673,12 @@ function autoInicioReports() {
         datatype: "JSON",
         success: function (respuesta) {
             console.log(respuesta);
-            pintarRespuesta(respuesta);
+            pintarRespuestaReports(respuesta);
         }
     })
 }
 
-function pintarRespuesta(respuesta) {
+function pintarRespuestaReports(respuesta) {
     let myTable = "<table>";
     myTable += "<tr>";
     myTable += "<th>Completadas</th>";
@@ -710,7 +710,6 @@ function pintarRespuestaDate(respuesta) {
     let myTable = "<table>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
-        myTable += "<th>total</th>";
         myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
         myTable += "<td>" + respuesta[i].startDate + "</td>";
         myTable += "<td>" + respuesta[i].status + "</td>";
@@ -736,8 +735,7 @@ function pintarRespuestaClients(respuesta) {
     let myTable = "<table>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
-        myTable += "<th>total</th>";
-        myTable += "<td>" + respuesta[i].total + "</td>";
+        myTable += "<th>total: " + respuesta[i].total + "</th>";
         myTable += "<td>" + respuesta[i].client.name + "</td>";
         myTable += "<td>" + respuesta[i].client.email + "</td>";
         myTable += "<td>" + respuesta[i].client.age + "</td>";
