@@ -20,6 +20,12 @@ function autoInicioCategory() {
 
 function pintarRespuestaCategory(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Nombre</th>"
+    myTable += "<th>Descripción</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].name + "</td>";
@@ -130,6 +136,15 @@ function autoInicioOrtopedic() {
 
 function pintarRespuestaOrtopedic(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Nombre</th>"
+    myTable += "<th>Marca</th>"
+    myTable += "<th>Año</th>"
+    myTable += "<th>Descripción</th>"
+    myTable += "<th>Categoría</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].name + "</td>";
@@ -245,6 +260,14 @@ function autoInicioClient() {
 
 function pintarRespuestaClient(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Email</th>"
+    myTable += "<th>Contraseña</th>"
+    myTable += "<th>Nombre</th>"
+    myTable += "<th>Edad</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].email + "</td>";
@@ -360,6 +383,8 @@ function pintarRespuestaMessage(respuesta) {
     myTable += "<th>Mensaje</th>"
     myTable += "<th>Cliente</th>"
     myTable += "<th>Ortopedico</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
     myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
@@ -468,6 +493,15 @@ function autoInicioReservation() {
 
 function pintarRespuestaReservation(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Fecha inicial</th>"
+    myTable += "<th>Fecha final</th>"
+    myTable += "<th>Estatus</th>"
+    myTable += "<th>Cliente</th>"
+    myTable += "<th>Ortopedico</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].startDate + "</td>";
@@ -583,6 +617,13 @@ function autoInicioScore() {
 
 function pintarRespuestaScore(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Mensaje</th>"
+    myTable += "<th>Estrellas</th>"
+    myTable += "<th>Reserva</th>"
+    myTable += "<th>Actualizar</th>"
+    myTable += "<th>Borrar</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].messageText + "</td>";
@@ -686,8 +727,16 @@ function autoInicioReports() {
 function pintarRespuestaReports(respuesta) {
     let myTable = "<table>";
     myTable += "<tr>";
-    myTable += "<th>Completadas: "+ respuesta.completed +"</th>";
-    myTable += "<th>Canceladas: "+ respuesta.cancelled +"</th>";
+    myTable += "<th>Estatus</th>";
+    myTable += "<th>Número de reservas</th>";
+    myTable += "</tr>";
+    myTable += "<tr>";
+    myTable += "<td>Completadas</td>";
+    myTable += "<td>" + respuesta.completed + "</td>"
+    myTable += "</tr>";
+    myTable += "<tr>";
+    myTable += "<td>Canceladas</td>";
+    myTable += "<td>" + respuesta.cancelled + "</td>"
     myTable += "</tr>";
     myTable += "</table>";
     $("#resultado7").html(myTable);
@@ -711,6 +760,11 @@ function traerReportDate() {
 
 function pintarRespuestaDate(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Fecha inicial</th>"
+    myTable += "<th>Fecha final</th>"
+    myTable += "<th>Estatus</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].startDate + "</td>";
@@ -736,9 +790,15 @@ function traerReportClientes() {
 
 function pintarRespuestaClients(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Total</th>"
+    myTable += "<th>Cliente</th>"
+    myTable += "<th>Email</th>"
+    myTable += "<th>Edad</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
-        myTable += "<th>total: " + respuesta[i].total + "</th>";
+        myTable += "<td>" + respuesta[i].total + "</td>";
         myTable += "<td>" + respuesta[i].client.name + "</td>";
         myTable += "<td>" + respuesta[i].client.email + "</td>";
         myTable += "<td>" + respuesta[i].client.age + "</td>";
