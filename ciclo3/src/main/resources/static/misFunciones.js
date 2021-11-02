@@ -356,6 +356,11 @@ function autoInicioMessage() {
 
 function pintarRespuestaMessage(respuesta) {
     let myTable = "<table>";
+    myTable += "<tr>";
+    myTable += "<th>Mensaje</th>"
+    myTable += "<th>Cliente</th>"
+    myTable += "<th>Ortopedico</th>"
+    myTable += "</tr>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
         myTable += "<td>" + respuesta[i].messageText + "</td>";
@@ -454,7 +459,7 @@ function autoInicioReservation() {
             pintarRespuestaReservation(respuesta);
             let $select = $("#select-reservation");
             $.each(respuesta, function (id, name) {
-                $select.append('<option value=' + name.idReservation + '>' + name.startDate + '</option>');
+                $select.append('<option value=' + name.idReservation + '>' + name.devolutionDate + '</option>');
                 console.log("select " + name.idReservation);
             });
         }
@@ -681,10 +686,8 @@ function autoInicioReports() {
 function pintarRespuestaReports(respuesta) {
     let myTable = "<table>";
     myTable += "<tr>";
-    myTable += "<th>Completadas</th>";
-    myTable += "<td>" + respuesta.completed + "</td>";
-    myTable += "<th>Canceladas</th>";
-    myTable += "<td>" + respuesta.cancelled + "</td>";
+    myTable += "<th>Completadas: "+ respuesta.completed +"</th>";
+    myTable += "<th>Canceladas: "+ respuesta.cancelled +"</th>";
     myTable += "</tr>";
     myTable += "</table>";
     $("#resultado7").html(myTable);
@@ -710,8 +713,8 @@ function pintarRespuestaDate(respuesta) {
     let myTable = "<table>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
-        myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
         myTable += "<td>" + respuesta[i].startDate + "</td>";
+        myTable += "<td>" + respuesta[i].devolutionDate + "</td>";
         myTable += "<td>" + respuesta[i].status + "</td>";
         myTable += "</tr>";
     }
